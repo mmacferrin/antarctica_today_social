@@ -4,9 +4,9 @@ by Dr. Mike MacFerrin, University of Colorado
 
 Daily maps of surface melt extent on the Antarctic ice sheet during the austral melt season (Oct 1 to Apr 30), with a 1-day lag.
 
-| <img src="./images/R0_most_recent_daily.png" alt="Daily Melt Extent"/> | <img src="./images/R0_most_recent_line_plot.png" alt="Seasonal Line Plot"/> |
+| **Daily Melt Extent:**<img src="./images/R0_most_recent_daily.png" alt="Daily Melt Extent"/> | **Seasonal Trend:**<img src="./images/R0_most_recent_line_plot.png" alt="Seasonal Line Plot" /> |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="./images/R0_most_recent_sum.png" alt="Sum of Melt Days"/> | <img src="./images/R0_most_recent_anomaly.png" alt="Anomaly of Melt Days"/> |
+| **Sum of Melt Days:**<img src="./images/R0_most_recent_sum.png" alt="Sum of Melt Days"/> | **Anomaly of Melt Days** (compared to average)**:**<img src="./images/R0_most_recent_anomaly.png" alt="Anomaly of Melt Days"/> |
 
 Surface melt is derived from daily composites of passive-microwave satellite imagery combined with a microwave emission model based on version for Greenland described in [Mote, et. al. (1993)](doi.org/10.3189/S0260305500012891) (and other publications). The original model for Greenland has been changed slightly to account for conditions in Antarctica. Melt extents are approximate and should be verified against ground conditions for operational use.
 
