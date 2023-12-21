@@ -4,9 +4,20 @@ by Dr. Mike MacFerrin, University of Colorado
 
 Daily maps of surface melt extent on the Antarctic ice sheet during the austral melt season (Oct 1 to Apr 30), with a 1-day lag.
 
-| **Daily Melt Extent:**<img src="./images/R0_most_recent_daily.png" alt="Daily Melt Extent"/> | **Seasonal Trend:**<img src="./images/R0_most_recent_line_plot.png" alt="Seasonal Line Plot" /> |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| **Sum of Melt Days:**<img src="./images/R0_most_recent_sum.png" alt="Sum of Melt Days"/> | **Anomaly of Melt Days** (compared to average)**:**<img src="./images/R0_most_recent_anomaly.png" alt="Anomaly of Melt Days"/> |
+<table style="width:100%;text-align:center">
+  <tr>
+    <td style="width:50%;padding:0px"><b>Daily Melt Extent:</b><br>
+<img src="./images/R0_most_recent_daily.png" alt="Daily Melt Extent"/></td>
+    <td style="width:50%;padding:0px"><b>Seasonal Trend:</b><br>
+    <img src="./images/R0_most_recent_line_plot.png" alt="Seasonal Line Plot" /></td>
+  </tr>
+  <tr>
+    <td style="padding:0px"><b>Sum of Melt Days:</b><br>
+    <img src="./images/R0_most_recent_sum.png" alt="Sum of Melt Days"/></td>
+    <td style="padding:0px"><b>Anomaly of Melt Days</b> (compared to average)<b>:</b><br>
+    <img src="./images/R0_most_recent_anomaly.png" alt="Anomaly of Melt Days"/></td>
+  </tr>
+</table>
 
 Surface melt is derived from daily composites of passive-microwave satellite imagery combined with a microwave emission model based on version for Greenland described in [Mote, et. al. (1993)](doi.org/10.3189/S0260305500012891) (and other publications). The original model for Greenland has been changed slightly to account for conditions in Antarctica. Melt extents are approximate and should be verified against ground conditions for operational use.
 
