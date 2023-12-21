@@ -4,17 +4,17 @@ by Dr. Mike MacFerrin, University of Colorado
 
 Daily maps of surface melt extent on the Antarctic ice sheet during the austral melt season (Oct 1 to Apr 30), with a 1-day lag.
 
-<table style="width:100%;text-align:center">
+<table>
   <tr>
-    <td style="width:50%;padding:0px"><b>Daily Melt Extent:</b><br>
+    <td align='center' width='50%' padding='0px'><b>Daily Melt Extent:</b><br>
 <img src="./images/R0_most_recent_daily.png" alt="Daily Melt Extent"/></td>
-    <td style="width:50%;padding:0px"><b>Seasonal Trend:</b><br>
+    <td align='center' width='50%' padding='0px'><b>Seasonal Trend:</b><br>
     <img src="./images/R0_most_recent_line_plot.png" alt="Seasonal Line Plot" /></td>
   </tr>
   <tr>
-    <td style="padding:0px"><b>Sum of Melt Days:</b><br>
+    <td padding='0px'><b>Sum of Melt Days:</b><br>
     <img src="./images/R0_most_recent_sum.png" alt="Sum of Melt Days"/></td>
-    <td style="padding:0px"><b>Anomaly of Melt Days</b> (compared to average)<b>:</b><br>
+    <td padding='0px'><b>Anomaly of Melt Days</b> (compared to average)<b>:</b><br>
     <img src="./images/R0_most_recent_anomaly.png" alt="Anomaly of Melt Days"/></td>
   </tr>
 </table>
