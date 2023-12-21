@@ -30,20 +30,8 @@ class AntTodaySocialApp:
 
         # 1. Use "update_antarctica_today.py" to Update the data. Get the info of this data.
 
-        # Generate each of these.
-        #      text: str,
-        #      image1: str,
-        #      image1_alt: str,
-        #      image2: str,
-        #      image2_alt: str,
-        #      image3: str,
-        #      image3_alt: str,
-        #      image4: str,
-        #      image4_alt: str,
-        #      reply_to_latest: bool = True):
-        # """Add a post to the thread and record it into the post history for all platforms included."""
-
         # Fetch the date covered by this post.
+        # Look in update_antarctica_today.py::AntarcticaTodayImages class definition for the namespaces here.
         at_update_object = update_antarctica_today.run_update_data()
         date_covered = os.path.split(at_update_object.dirname)[-1]
 
@@ -72,6 +60,9 @@ class AntTodaySocialApp:
                 responses[i] = post_id
             except Exception as e:
                 responses[i] = e
+
+        # Then, check the "images/most_recent_date.txt file to see what the most recent date of imagery was that
+        # we posted to the git.
 
         return responses
 

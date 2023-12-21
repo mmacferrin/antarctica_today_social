@@ -163,7 +163,6 @@ class AntTodayAppMastodon(anttoday_app_baseclass.AntTodayAppBaseClass):
                                             media_ids=None if (len(media_to_include) == 0) else media_to_include,
                                             visibility=last_post.visibility)
 
-        print(new_post)
         return new_post.id
 
     def TEST_post(self,
