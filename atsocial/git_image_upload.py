@@ -39,7 +39,7 @@ class ATGit:
         assert re.search(r"\A\d{4}\.\d{2}\.\d{2}\Z", repo_date_str) is not None
 
         # Now, see whether the date in the AntarcticaTodayImages directory is the same or not.
-        atimages_datestr = os.path.split(atimages_obj.dirname)[0]
+        atimages_datestr = os.path.split(atimages_obj.dirname)[-1]
         # Make sure that's the right date format too.
         assert re.search(r"\A\d{4}\.\d{2}\.\d{2}\Z", atimages_datestr) is not None
 

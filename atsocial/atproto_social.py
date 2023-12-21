@@ -107,7 +107,10 @@ class AntTodayAppATProto(anttoday_app_baseclass.AntTodayAppBaseClass):
             postinfo_objects = [None] * len(posts)
             for i, post in enumerate(posts):
                 post = posts[i]
-                num_images = 0 if (post.embed is None) else len(post.embed.images)
+                num_images = 0 if (post.embed is None or
+                                   not hasattr(post.embed, "images") or
+                                   len(post.embed.images) == 0)\
+                             else len(post.embed.images)
                 post_obj = anttoday_app_baseclass.PostInfo(
                     post_id=post.uri,
                     reply_to_id=None if post.record.reply is None else post.record.reply.parent.uri,
