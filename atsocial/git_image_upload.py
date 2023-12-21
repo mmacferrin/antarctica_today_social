@@ -9,6 +9,7 @@ import update_antarctica_today
 
 gitrepo_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 
+
 class ATGit:
     """Sipmle class for handling the antarctica_today_social Git repository.
 
@@ -18,11 +19,17 @@ class ATGit:
     def __init__(self):
         self.repodir = gitrepo_dir
         self.img_dir = os.path.join(self.repodir, "images")
+        self.is_local_current = False
+
+    def pull(self):
+        print("> git pull")
+        subprocess.run(["git", "pull"], cwd=self.repodir)
+        self.is_local_current = True
 
     def upload_images(self, atimages_obj: update_antarctica_today.AntarcticaTodayImages):
         # First, make sure our present repo is synced with the main branch.
-        print("> git pull")
-        subprocess.run(["git", "pull"], cwd=self.repodir)
+        if not self.is_local_current:
+            self.pull()
 
         # The text file containing the "most recent date" updated in the repository.
         date_txtfile = os.path.join(self.img_dir, "most_recent_date.txt")
@@ -85,20 +92,4 @@ class ATGit:
             print(">", " ".join(arglist))
             subprocess.run(arglist, cwd=self.repodir)
 
-
-
-    def test(self):
-        """Test function."""
-        print("> git status")
-        subprocess.run(["git", "status"], cwd=self.repodir)
-        print("> git add  images/most_recent_date.txt")
-        subprocess.run(["git", "add", "images/most_recent_date.txt", cwd=self.repodir])
-        print("> git commit -m 'Uploading most_recent_date.txt to correspond with images.'")
-        subprocess.run(["git", "commit", "-m", "'Uploading most_recent_date.txt to correspond with images.'", cwd=self.repodir])
-        print("> git push")
-        subprocess.run(["git", "push"], cwd=self.repodir)
-
-
-if __name__ == "__main__":
-    git = ATGit()
-    git.test()
+        return

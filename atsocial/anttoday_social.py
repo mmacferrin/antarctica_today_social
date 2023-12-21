@@ -8,6 +8,7 @@ import os
 
 import ant_today_text_generator
 import atproto_social
+import git_image_upload
 import mastodon_social
 import update_antarctica_today
 
@@ -61,21 +62,11 @@ class AntTodaySocialApp:
             except Exception as e:
                 responses[i] = e
 
-        # Then, check the "images/most_recent_date.txt file to see what the most recent date of imagery was that
-        # we posted to the git.
+        # Upload the new images to the git repository. (This will exit out if the git is alredy current.)
+        atgit = git_image_upload.ATGit()
+        atgit.upload_images(at_update_object)
 
         return responses
-
-    # def post_latest_data(self):
-    #     # First, run the code to update the data in the directories.
-    #     self.update_ant_today_data()
-    #
-    # def update_ant_today_data(self):
-    #     """Run the Antarctica_Today code to get data from NSIDC and create new figures."""
-    #     return_object = update_antarctica_today.run_update_data()
-    #     # print(return_object)
-    #     # print(return_object.__dict__)
-    #     return return_object
 
 
 def new_post_on_all_platforms():
