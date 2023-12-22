@@ -4,7 +4,7 @@ by Dr. Mike MacFerrin, University of Colorado
 
 Daily maps of surface melt extent on the Antarctic ice sheet during the austral melt season (Oct 1 to Apr 30), with a 1-day lag.
 
-### **<!--date_start-->Thursday, December 22, 2023<!--date_end-->**
+### **<!--date_start-->Thursday, December 21, 2023<!--date_end-->**
 <!--The "date_start" and "date_end" html-comment tags above are so the add_date_to_readme.py script can find and dynamically replace the date in this README.md every time the images are updated. Do not remove them unless the code no longer uses add_date_to_readme.py-->
 <table>
   <tr>
