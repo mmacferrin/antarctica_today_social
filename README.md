@@ -15,7 +15,7 @@ Daily maps of surface melt extent on the Antarctic ice sheet during the austral 
   <tr>
     <td padding='0px'><b>Sum of Melt Days:</b><br>
     <img src="./images/R0_most_recent_sum.png" alt="Sum of Melt Days"/></td>
-    <td padding='0px'><b>Anomaly of Melt Days</b> (compared to average)<b>:</b><br>
+    <td padding='0px'><b>Melt Anomaly</b> (compared to median)<b>:</b><br>
     <img src="./images/R0_most_recent_anomaly.png" alt="Anomaly of Melt Days"/></td>
   </tr>
 </table>
