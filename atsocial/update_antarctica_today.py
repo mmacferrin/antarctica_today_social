@@ -58,8 +58,8 @@ def run_update_data(run_only_if_before_yesterday: bool = True,
             else:
                 return outdir
 
-    # Run the sub-process update_data.py
-    subprocess.run([at_python_exec, at_python_update_data_script],
+    # Run the sub-process update_data.py, just for region 0.
+    subprocess.run([at_python_exec, at_python_update_data_script, "-region", "0"],
                    cwd=os.path.dirname(at_python_update_data_script),
                    env=pythonpath_env_variable)
 
