@@ -15,7 +15,6 @@ import update_antarctica_today
 
 class AntTodaySocialApp:
     def __init__(self):
-        # TODO: Uncomment this when we want to enable the Mastodn app too.
         self.apps = [atproto_social.AntTodayAppATProto(),
                      mastodon_social.AntTodayAppMastodon()]
         # self.apps = [atproto_social.AntTodayAppATProto()] # Un-comment to only work in BlueSky (ATProto)
@@ -64,7 +63,7 @@ class AntTodaySocialApp:
 
         # Upload the new images to the git repository. (This will exit out if the git is alredy current.)
         atgit = git_image_upload.ATGit()
-        atgit.upload_images(at_update_object)
+        atgit.upload_images(at_update_object, also_update_readme=True)
 
         return responses
 
@@ -78,18 +77,3 @@ def new_post_on_all_platforms():
 
 if __name__ == "__main__":
     new_post_on_all_platforms()
-
-    # atoday.post(
-    #     "Antarctica Today test post: Antarctic surface melt extent for 2023.12.15, as detected from passive microwave"
-    #     " measurements. This is just a test, only a test.",
-    #     image1="/home/mmacferrin/git/Antarctica_Today/plots/daily_plots_gathered/2023.12.14/R1_2023.12.14_daily.png",
-    #     image1_alt="Daily surface melt extent for 15 Dec 2023.",
-    #     image2="/home/mmacferrin/git/Antarctica_Today/plots/daily_plots_gathered/2023.12.14/R0_2023-2024_2023.12.14_sum.png",
-    #     image2_alt="Sum of melt days for the 2023-24 melt season, through 14 Dec 2023.",
-    #     image3="/home/mmacferrin/git/Antarctica_Today/plots/daily_plots_gathered/2023.12.14/R0_2023-2024_2023.12.14_anomaly.png",
-    #     image3_alt="Anomaly of the sum of melt days for the 2023-24 melt season, through 14 Dec 2023, compared to the"
-    #                " 1990-2020 historical averages.",
-    #     image4="/home/mmacferrin/git/Antarctica_Today/plots/daily_plots_gathered/2023.12.14/R0_2023-2024_2023.12.14_gap_filled.png",
-    #     image4_alt="Daily timeline line-plot of surface melt extent for each day of the 2023-24 Antartic melt season, through"
-    #                " 14 Dec 2023.",
-    #     reply_to_latest=True)

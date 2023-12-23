@@ -5,6 +5,7 @@ import re
 import shutil
 import subprocess
 
+import add_date_to_readme
 import update_antarctica_today
 
 gitrepo_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -26,7 +27,9 @@ class ATGit:
         subprocess.run(["git", "pull"], cwd=self.repodir)
         self.is_local_current = True
 
-    def upload_images(self, atimages_obj: update_antarctica_today.AntarcticaTodayImages):
+    def upload_images(self,
+                      atimages_obj: update_antarctica_today.AntarcticaTodayImages,
+                      also_update_readme: bool = True):
         # First, make sure our present repo is synced with the main branch.
         if not self.is_local_current:
             self.pull()
@@ -75,13 +78,19 @@ class ATGit:
             # Copy over the new image
             shutil.copyfile(new_img, repo_img)
 
+        was_readme_changed = False
+        if also_update_readme:
+            was_readme_changed = add_date_to_readme.substitute_date_in_readme()
+
         # Now, check in all the new files with Git.
-        # Five add calls, one commit, one push.
+        # Five or six add calls, one commit, one push.
+        # Note: ":" is the bash "do nothing" command.
         git_args = [["git", "add", "images/most_recent_date.txt"],
                     ["git", "add", "images/R0_most_recent_daily.png"],
                     ["git", "add", "images/R0_most_recent_sum.png"],
                     ["git", "add", "images/R0_most_recent_anomaly.png"],
                     ["git", "add", "images/R0_most_recent_line_plot.png"],
+                    ["git", "add", "README.md"] if was_readme_changed else [':'],
                     ["git", "commit", "-m",
                      "'Uploading most recent images and datestr for {0}.'".format(atimages_datestr)],
                     ["git", "push"]

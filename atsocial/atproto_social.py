@@ -109,8 +109,8 @@ class AntTodayAppATProto(anttoday_app_baseclass.AntTodayAppBaseClass):
                 post = posts[i]
                 num_images = 0 if (post.embed is None or
                                    not hasattr(post.embed, "images") or
-                                   len(post.embed.images) == 0)\
-                             else len(post.embed.images)
+                                   len(post.embed.images) == 0) \
+                    else len(post.embed.images)
                 post_obj = anttoday_app_baseclass.PostInfo(
                     post_id=post.uri,
                     reply_to_id=None if post.record.reply is None else post.record.reply.parent.uri,
@@ -170,7 +170,8 @@ class AntTodayAppATProto(anttoday_app_baseclass.AntTodayAppBaseClass):
                 # Just using one of my previous reply posts in a longer random thread, url here:
                 # https://bsky.app/profile/icesheetmike.bsky.social/post/3kgrpb7qb562h
                 # And then changing the reply_obj... .uri and .cid fields to make atproto happy with it..
-                random_reply_post = self.get_post_data(post_id="at://did:plc:iqcyflkt2gun674dnbssobt6/app.bsky.feed.post/3kgrpb7qb562h")
+                random_reply_post = self.get_post_data(
+                    post_id="at://did:plc:iqcyflkt2gun674dnbssobt6/app.bsky.feed.post/3kgrpb7qb562h")
 
                 # This is where a valid ReplyRef object sits in that return object.
                 reply_obj = random_reply_post.thread.post.record.reply
@@ -180,8 +181,8 @@ class AntTodayAppATProto(anttoday_app_baseclass.AntTodayAppBaseClass):
 
                 # This code is still broken, don't have the energy to debug. Why does atproto make this a royal PITA.
                 # reply_obj = last_post_obj
-                    # (parent=last_post_obj,
-                    #                                                    root=last_post_obj))
+                # (parent=last_post_obj,
+                #                                                    root=last_post_obj))
                 # reply_obj.parent = last_post_obj
             else:
                 reply_obj.parent.uri = last_post_obj.uri
@@ -235,7 +236,7 @@ class AntTodayAppATProto(anttoday_app_baseclass.AntTodayAppBaseClass):
 
 def define_and_parse_args():
     parser = argparse.ArgumentParser(description="Class descrtipon for the ATProto (BlueSky) app implementation. "
-        "Run this independently to update the post database (optional but sometimes nice if you've added other posts.")
+                                                 "Run this independently to update the post database (optional but sometimes nice if you've added other posts.")
 
     parser.add_argument("-date", "-d", type=str, default="",
                         help="A date (in YYYY.MM.DD format) to add to the latest post in the thread database. This "
@@ -243,15 +244,17 @@ def define_and_parse_args():
                              "If the last post in the database doesn't have a date_covered value, it'll be added there.")
     parser.add_argument("-comment", "-c", type=str, default="",
                         help="Add a comment into the 'comments' field in the last post. These comments are not seen "
-                        "with the posts, they are simply for our own benefit.")
+                             "with the posts, they are simply for our own benefit.")
 
     return parser.parse_args()
+
 
 if __name__ == "__main__":
     args = define_and_parse_args()
     # The date should either be a blank string, or in the YYYY.MM.DD format. If neither, complain and exit.
     if args.date != "" and re.search(r"\A\d{4}\.\d{2}\.\d{2}\Z", args.date) is None:
-        print("ERROR: The argument -date must be in a YYYY.MM.DD format, which '{0}' is not. Exiting.".format(args.date))
+        print(
+            "ERROR: The argument -date must be in a YYYY.MM.DD format, which '{0}' is not. Exiting.".format(args.date))
 
     app = AntTodayAppATProto()
     app.open_and_populate()
