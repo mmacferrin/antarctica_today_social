@@ -4,6 +4,7 @@ import datetime
 import os
 import re
 
+
 def substitute_date_in_readme():
     """Put the latest date (datestr as a YYYY.MM.DD format) into the main README.md file.
 
@@ -19,8 +20,8 @@ def substitute_date_in_readme():
     date_str = open(date_fname, 'r').read().strip()
     assert re.search(r"\A\d{4}\.\d{2}\.\d{2}", date_str) is not None
 
-    # Create a pretty version of the date string.
-    date_str_pretty = datetime.datetime.strptime(date_str, "%Y.%m.%d").strftime("%A, %B %-m, %Y")
+    # Create a pretty version of the date string, e.g. "Saturday, December 23, 2023"
+    date_str_pretty = datetime.datetime.strptime(date_str, "%Y.%m.%d").strftime("%A, %B %-d, %Y")
 
     readme_fname = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "README.md"))
     # Make sure the README file is actually there.
