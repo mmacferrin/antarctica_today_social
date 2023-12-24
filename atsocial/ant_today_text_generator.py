@@ -70,7 +70,7 @@ class ATTextValues:
         # Get the date string. Should be in "YYYY.MM.DD" format.
         dt = datetime.datetime.strptime(yyyy_mm_dd_str, "%Y.%m.%d")
         # Create a text date string, "2023.12.17" --> Sun December 17, 2023.
-        date_str = dt.strftime("%a %B %d, %Y")
+        date_str = dt.strftime("%a %B %-d, %Y")
         # Get the season string. HERE WE ASSUME the Anarctic melt season starts 1 Oct and ends 30 April, annually.
         # First, see if the date is in the first half or the second half the season.
         mm_dd_start = (10, 1)
