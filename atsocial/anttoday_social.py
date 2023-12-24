@@ -13,6 +13,13 @@ import mastodon_social
 import update_antarctica_today
 
 
+###############################################################################################################
+# Note: To schedule this for daily auto-run, I set it up using the auto-scheduler on my (Ubuntu) workstation.
+# I used the "cron" utility, described here: https://askubuntu.com/questions/1200232/task-scheduler-in-ubuntu
+# You will probably want to look up the way to do it best in whatever environment you're running your app from.
+###############################################################################################################
+
+
 class AntTodaySocialApp:
     def __init__(self):
         self.apps = [atproto_social.AntTodayAppATProto(),
