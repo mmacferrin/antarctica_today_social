@@ -1,0 +1,4 @@
+# Credentials (passwords and keys) are all in the “credentials” directory.,,,,,,,
+platform_name,username,user_id,post_limit,alt_text_limit,post_history_file,credentials_file,text_addition
+mastodon,**insert username@server.social**,**insert acount id number**,500,1500,post_history_mastodon.csv,AntarcticaToday_mastodon_creds.csv,
+bluesky,**insert username.server.social,**insert acount did:plc:identification tag**,300,1000,post_history_bluesky.csv,BlueSky_app_creds.csv,\n🧪⚒️
