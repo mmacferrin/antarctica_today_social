@@ -30,6 +30,7 @@ at_gathered_plots_dir = os.path.abspath(
 
 
 def run_update_data(run_only_if_before_yesterday: bool = True,
+                    skip_update_and_just_get_object: bool = False,
                     return_as_object=True):
     """Run the update_data.py script in Antartica Today, and return the new folder created.
 
@@ -58,10 +59,11 @@ def run_update_data(run_only_if_before_yesterday: bool = True,
             else:
                 return outdir
 
-    # Run the sub-process update_data.py, just for region 0.
-    subprocess.run([at_python_exec, at_python_update_data_script, "-region", "0"],
-                   cwd=os.path.dirname(at_python_update_data_script),
-                   env=pythonpath_env_variable)
+    if not skip_update_and_just_get_object:
+        # Run the sub-process update_data.py, just for region 0.
+        subprocess.run([at_python_exec, at_python_update_data_script, "-region", "0"],
+                       cwd=os.path.dirname(at_python_update_data_script),
+                       env=pythonpath_env_variable)
 
     # Now go get the directory names again. There should be a new one in there with a later date than the others.
     dirnames = sorted([dn for dn in os.listdir(at_gathered_plots_dir)

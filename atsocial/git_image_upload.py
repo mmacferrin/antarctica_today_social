@@ -8,6 +8,7 @@ import subprocess
 import add_date_to_readme
 import update_antarctica_today
 
+# This should point to the base directory of this repo. In this case, one parent directory up.
 gitrepo_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 
 
@@ -21,10 +22,11 @@ class ATGit:
         self.repodir = gitrepo_dir
         self.img_dir = os.path.join(self.repodir, "images")
         self.is_local_current = False
+        self.git_cmd = "/usr/bin/git"
 
     def pull(self):
         print("> git pull")
-        subprocess.run(["git", "pull"], cwd=self.repodir)
+        subprocess.run([self.git_cmd, "pull"], cwd=self.repodir)
         self.is_local_current = True
 
     def upload_images(self,
@@ -49,7 +51,7 @@ class ATGit:
         # If the repo has an equal-or-later date than what we have here, then do nothing.
         # Since they're both confirmed to be in a 'YYYY.MM.DD' format, a sipmle string compare will do.
         if repo_date_str >= atimages_datestr:
-            print(f"Date '{repo_date_str} in Git Repo does not need to be updated with local date '{atimages_datestr}")
+            print(f"Date {repo_date_str} in Git Repo does not need to be updated with local date {atimages_datestr}")
             return
 
         # If the date in the repo is outdated, then we can update the text file and images.
@@ -86,9 +88,8 @@ class ATGit:
         # Start with a pull command to bring the local repo up-to-date, avoiding blocking conflicts.
         # Then five or six add calls to add the new files, one commit, and one push up to the repository.
         # Note: ":" is the bash "do nothing" command, which we use if the readme wasn't updated at all.
-        git_cmd = "/usr/bin/git"
-        git_args = [[git_cmd, "pull"],
-                    [git_cmd, "add", "images/most_recent_date.txt"],
+        git_cmd = self.git_cmd
+        git_args = [[git_cmd, "add", "images/most_recent_date.txt"],
                     [git_cmd, "add", "images/R0_most_recent_daily.png"],
                     [git_cmd, "add", "images/R0_most_recent_sum.png"],
                     [git_cmd, "add", "images/R0_most_recent_anomaly.png"],
@@ -104,3 +105,13 @@ class ATGit:
             subprocess.run(arglist, cwd=self.repodir)
 
         return
+
+
+if __name__ == "__main__":
+    # Running this module standalone just takes the data as-is in the local repo and tries to update the Git with it.
+    # Useful if (for some reason) the git didn't update.
+    at_update_object = update_antarctica_today.run_update_data(skip_update_and_just_get_object=True)
+
+    # Upload the new images to the git repository. (This will exit out if the git is alredy current.)
+    atgit = ATGit()
+    atgit.upload_images(at_update_object, also_update_readme=True)
