@@ -83,17 +83,19 @@ class ATGit:
             was_readme_changed = add_date_to_readme.substitute_date_in_readme()
 
         # Now, check in all the new files with Git.
-        # Five or six add calls, one commit, one push.
-        # Note: ":" is the bash "do nothing" command.
-        git_args = [["git", "add", "images/most_recent_date.txt"],
-                    ["git", "add", "images/R0_most_recent_daily.png"],
-                    ["git", "add", "images/R0_most_recent_sum.png"],
-                    ["git", "add", "images/R0_most_recent_anomaly.png"],
-                    ["git", "add", "images/R0_most_recent_line_plot.png"],
-                    ["git", "add", "README.md"] if was_readme_changed else [':'],
-                    ["git", "commit", "-m",
-                     "'Uploading most recent images and datestr for {0}.'".format(atimages_datestr)],
-                    ["git", "push"]
+        # Start with a pull command to bring the local repo up-to-date, avoiding blocking conflicts.
+        # Then five or six add calls to add the new files, one commit, and one push up to the repository.
+        # Note: ":" is the bash "do nothing" command, which we use if the readme wasn't updated at all.
+        git_cmd = "/usr/bin/git"
+        git_args = [[git_cmd, "pull"],
+                    [git_cmd, "add", "images/most_recent_date.txt"],
+                    [git_cmd, "add", "images/R0_most_recent_daily.png"],
+                    [git_cmd, "add", "images/R0_most_recent_sum.png"],
+                    [git_cmd, "add", "images/R0_most_recent_anomaly.png"],
+                    [git_cmd, "add", "images/R0_most_recent_line_plot.png"],
+                    [git_cmd, "add", "README.md"] if was_readme_changed else [':'],
+                    [git_cmd, "commit", "-m", "Uploading most recent images for {0}.".format(atimages_datestr)],
+                    [git_cmd, "push"]
                     ]
 
         # Run through and execute each command.
