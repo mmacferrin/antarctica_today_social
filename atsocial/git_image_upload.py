@@ -12,7 +12,6 @@ import update_antarctica_today
 # This should point to the base directory of this repo. In this case, one parent directory up.
 gitrepo_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 
-
 class ATGit:
     """Sipmle class for handling the antarctica_today_social Git repository.
 
@@ -103,7 +102,10 @@ class ATGit:
         for arglist in git_args:
             print(">", " ".join(arglist))
 
-            # The "push" commands don't seem to be working. Wait 5s after the commit before trying to push the code, perhaps that would help (not exactly sure here).
+            # The "push" commands don't seem to be working.
+            # Wait 5s after the commit before trying to push the code, perhaps that would help (not exactly sure here).
+            # If this doesn't work, I'll try something else.
+            # I haven't yet taken the time to fully debug what's going on here.
             if arglist[1] == "push":
                 time.sleep(5)
 
