@@ -120,6 +120,10 @@ class AntarcticaTodayImages:
                  anomaly_map,
                  line_plot):
         self.dirname = dirname
+        self.datestr = os.path.split(dirname)[1]
+        # Make sure the directory name is in the YYYY.MM.DD format. It should be unless the directory structure in
+        # Antarctica_Today changed.
+        assert re.search(r"\A\d{4}\.\d{2}\.\d{2}\Z", self.datestr) is not None
         self.daily_melt_map = daily_melt_map
         self.sum_map = sum_map
         self.anomaly_map = anomaly_map

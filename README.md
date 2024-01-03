@@ -4,20 +4,22 @@ by Dr. Mike MacFerrin, University of Colorado
 
 Daily maps of surface melt extent on the Antarctic ice sheet during the austral melt season (Oct 1 to Apr 30), with a 1-day lag.
 
-### **<!--date_start-->Tuesday, January 2, 2024<!--date_end-->**
-<!--The "date_start" and "date_end" html-comment tags above are so the add_date_to_readme.py script can find and dynamically replace the date in this README.md every time the images are updated. Do not remove them unless the code no longer uses add_date_to_readme.py-->
+### **<!--date_long_start-->Tuesday, January 2, 2024<!--date_long_end-->**
+<!--The "date_long_start" and "date_long_end" html-comment tags above are so the add_date_to_readme.py script can find and dynamically replace the date in this README.md every time the images are updated. Do not remove them unless the code no longer uses add_date_to_readme.py-->
+<!--Same goes for the "contains_short_date_start" and "contains_short_date_end" comments below.-->
+<!--Note: The "_start" tags and the "_end" tags should remain on the same line. The script searches line-by-line for both tags in a single text line.-->
 <table>
   <tr>
     <td align='center' width='50%' padding='0px'><b>Daily Melt Extent:</b><br>
-<img src="./images/R0_most_recent_daily.png" alt="Daily Melt Extent"/></td>
+<!--contains_short_date_start--><img src="./images/R0_daily_2024.01.02.png<!--contains_short_date_end--></td>
     <td align='center' width='50%' padding='0px'><b>Seasonal Trend:</b><br>
-    <img src="./images/R0_most_recent_line_plot.png" alt="Seasonal Line Plot" /></td>
+    <!--contains_short_date_start--><img src="./images/R0_line_plot_2024.01.02.png<!--contains_short_date_end--></td>
   </tr>
   <tr>
     <td align='center' padding='0px'><b>Sum of Melt Days:</b><br>
-    <img src="./images/R0_most_recent_sum.png" alt="Sum of Melt Days"/></td>
+    <!--contains_short_date_start--><img src="./images/R0_sum_2024.01.02.png<!--contains_short_date_end--></td>
     <td align='center' padding='0px'><b>Melt Anomaly</b> (compared to median)<b>:</b><br>
-    <img src="./images/R0_most_recent_anomaly.png" alt="Anomaly of Melt Days"/></td>
+    <!--contains_short_date_start--><img src="./images/R0_anomaly_2024.01.02.png<!--contains_short_date_end--></td>
   </tr>
 </table>
 
