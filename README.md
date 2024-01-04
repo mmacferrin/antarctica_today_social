@@ -11,15 +11,15 @@ Daily maps of surface melt extent on the Antarctic ice sheet during the austral 
 <table>
   <tr>
     <td align='center' width='50%' padding='0px'><b>Daily Melt Extent:</b><br>
-<!--contains_short_date_start--><img src="./images/R0_daily_2024.01.03.<!--contains_short_date_end--></td>
+<!--contains_short_date_start--><img src="./images/R0_daily_2024.01.03.png" /><!--contains_short_date_end--></td>
     <td align='center' width='50%' padding='0px'><b>Seasonal Trend:</b><br>
-    <!--contains_short_date_start--><img src="./images/R0_line_plot_2024.01.03.<!--contains_short_date_end--></td>
+    <!--contains_short_date_start--><img src="./images/R0_line_plot_2024.01.03.png" /><!--contains_short_date_end--></td>
   </tr>
   <tr>
     <td align='center' padding='0px'><b>Sum of Melt Days:</b><br>
-    <!--contains_short_date_start--><img src="./images/R0_sum_2024.01.03.<!--contains_short_date_end--></td>
+    <!--contains_short_date_start--><img src="./images/R0_sum_2024.01.03.png" /><!--contains_short_date_end--></td>
     <td align='center' padding='0px'><b>Melt Anomaly</b> (compared to mean)<b>:</b><br>
-    <!--contains_short_date_start--><img src="./images/R0_anomaly_2024.01.03.<!--contains_short_date_end--></td>
+    <!--contains_short_date_start--><img src="./images/R0_anomaly_2024.01.03.png" /><!--contains_short_date_end--></td>
   </tr>
 </table>
 
