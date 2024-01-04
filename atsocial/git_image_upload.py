@@ -57,7 +57,7 @@ class ATGit:
                   "does not need to be updated with new images dated {atimages_datestr}")
         else:
             # Get all the png files currently in the images/ dir.
-            png_files = [os.path.join(self.img_dir, fn) for fn in os.listdir(img_dir) if
+            png_files = [os.path.join(self.img_dir, fn) for fn in os.listdir(self.img_dir) if
                          os.path.splitext(fn)[1] == ".png"]
 
             # If the date in the repo is outdated, then we can update the text file and images.
@@ -116,7 +116,7 @@ class ATGit:
                         [git_cmd, "add", "images/" + os.path.basename(repo_image_anomaly_new)],
                         [git_cmd, "add", "images/" + os.path.basename(repo_image_line_plot_new)],
                         [git_cmd, "add", "README.md"],
-                        [git_cmd, "commit", "-m", "Uploading most recent images for {0}.".format(atimages_datestr)],
+                        [git_cmd, "commit", "-m", '"Uploading most recent images for {0}."'.format(atimages_datestr)],
                         [git_cmd, "push"],
                         ]
 

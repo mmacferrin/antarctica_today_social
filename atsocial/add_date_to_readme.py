@@ -104,7 +104,7 @@ def substitute_date_in_readme():
                     # The new YYYY.MM.DD string.
                     line_part_3 = date_str
                     # The part of the middle subset after the YYYY.MM.DD string
-                    line_part_4 = line_subset[subset_datestr_match.span()[1]]
+                    line_part_4 = line_subset[subset_datestr_match.span()[1]:]
                     # The part after (and including) the date_short_end_comment
                     line_part_5 = line[date_short_end_match.span()[0]:]
                     line = line_part_1 + line_part_2 + line_part_3 + line_part_4 + line_part_5
