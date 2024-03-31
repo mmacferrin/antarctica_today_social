@@ -4,22 +4,22 @@ by Dr. Mike MacFerrin, University of Colorado
 
 Daily maps of surface melt extent on the Antarctic ice sheet during the austral melt season (Oct 1 to Apr 30), with a 1-day lag.
 
-### **<!--date_long_start-->Friday, March 29, 2024<!--date_long_end-->**
+### **<!--date_long_start-->Saturday, March 30, 2024<!--date_long_end-->**
 <!--The "date_long_start" and "date_long_end" html-comment tags above are so the add_date_to_readme.py script can find and dynamically replace the date in this README.md every time the images are updated. Do not remove them unless the code no longer uses add_date_to_readme.py-->
 <!--Same goes for the "contains_short_date_start" and "contains_short_date_end" comments below.-->
 <!--Note: The "_start" tags and the "_end" tags should remain on the same line. The script searches line-by-line for both tags in a single text line.-->
 <table>
   <tr>
     <td align='center' width='50%' padding='0px'><b>Daily Melt Extent:</b><br>
-<!--contains_short_date_start--><img src="./images/R0_daily_2024.03.29.png" /><!--contains_short_date_end--></td>
+<!--contains_short_date_start--><img src="./images/R0_daily_2024.03.30.png" /><!--contains_short_date_end--></td>
     <td align='center' width='50%' padding='0px'><b>Seasonal Trend:</b><br>
-    <!--contains_short_date_start--><img src="./images/R0_line_plot_2024.03.29.png" /><!--contains_short_date_end--></td>
+    <!--contains_short_date_start--><img src="./images/R0_line_plot_2024.03.30.png" /><!--contains_short_date_end--></td>
   </tr>
   <tr>
     <td align='center' padding='0px'><b>Sum of Melt Days:</b><br>
-    <!--contains_short_date_start--><img src="./images/R0_sum_2024.03.29.png" /><!--contains_short_date_end--></td>
+    <!--contains_short_date_start--><img src="./images/R0_sum_2024.03.30.png" /><!--contains_short_date_end--></td>
     <td align='center' padding='0px'><b>Melt Anomaly</b> (compared to mean)<b>:</b><br>
-    <!--contains_short_date_start--><img src="./images/R0_anomaly_2024.03.29.png" /><!--contains_short_date_end--></td>
+    <!--contains_short_date_start--><img src="./images/R0_anomaly_2024.03.30.png" /><!--contains_short_date_end--></td>
   </tr>
 </table>
 
